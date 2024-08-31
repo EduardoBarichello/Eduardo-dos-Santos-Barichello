@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Escolaridade</title>
+    <style>
+        /* Definindo o estilo global do corpo da página */
+        body {
+            background-color: #ADD8E6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            color: black;
+        }
+
+        /* Efeito de fade-in para quando a página carregar */
+        body {
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Estilo para o cabeçalho */
+        header {
+            background-color: #0077B6;
+            width: 100%;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        /* Estilo para os links da barra de navegação */
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            padding: 8px;
+            transition: background-color 0.3s;
+        }
+
+        /* Efeito de hover nos links da barra de navegação */
+        header a:hover {
+            background-color: #005f8d;
+        }
+
+        /* Ajustando o conteúdo principal para não ficar escondido atrás da barra de navegação */
+        main {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Estilo para o título principal */
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            color: black;
+            border: 4px double black;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #F0F8FF;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Efeito de zoom ao passar o mouse sobre o título */
+        h1:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilo para o parágrafo */
+        p {
+            max-width: 600px;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            animation: slideIn 1.5s ease-in-out forwards;
+        }
+
+        /* Efeito de slide-in para o texto */
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Estilo para a imagem */
+        img {
+            max-width: 300px; 
+            border: 3px solid black;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease; 
+        }
+
+        /* Efeito de rotação ao passar o mouse sobre a imagem */
+        img:hover {
+            transform: rotate(10deg) scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegação -->
+    <header>
+        <a href="index.html" onclick="showSection('sobre')">Sobre Mim</a>
+        <a href="portofolio.html" onclick="showSection('portfolio')">Portfólio</a>
+        <a href="#" onclick="showSection('escolaridade')">Escolaridade</a>
+        <a href="entreEmContato.html" onclick="showSection('contato')">Entre em Contato</a>
+    </header>
+
+    <!-- Conteúdo principal do site -->
+    <main>
+        <!-- Seção "Sobre Mim" -->
+        <div id="sobre" class="section active">
+            <h1>Sobre Mim</h1>
+            <p>Aqui é a seção "Sobre Mim". Você pode adicionar informações sobre você.</p>
+        </div>
+
+        <!-- Seção "Portfólio" -->
+        <div id="portfolio" class="section">
+            <h1>Portfólio</h1>
+            <p>Aqui você encontrará alguns dos projetos que trabalhei recentemente. Confira o repositório do GitHub para mais detalhes!</p>
+        </div>
+
+        <!-- Seção "Escolaridade" (esta página) -->
+        <div id="escolaridade" class="section">
+            <h1>Minha Escolaridade</h1>
+            <p>
+                Conclui toda a minha escolaridade em escolas públicas, me formei no ensino médio na E.E.E.M Cônego João Batista Sorg.
+            </p>
+            <p>
+                Meus conhecimentos sobre idiomas aprendi sozinho; sei falar e escrever perfeitamente em inglês, japonês e um pouco de russo.
+            </p>
+            <!-- Imagem com efeito de rotação -->
+            <img src="escola.jpg" alt="Minha escola de ensino médio">
+        </div>
+
+        <!-- Seção "Entre em Contato" -->
+        <div id="contato" class="section">
+            <h1>Entre em Contato</h1>
+            <p>Se você deseja entrar em contato, envie um e-mail para contato@meudominio.com ou preencha o formulário de contato no meu site.</p>
+        </div>
+    </main>
+
+    <!-- JavaScript para alternar entre as seções -->
+    <script>
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+                section.style.display = 'none';
+            });
+
+            // Mostra a seção ativa clicada
+            var activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+            activeSection.style.display = 'block';
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('escolaridade');
+        });
+    </script>
+</body>
+</html>

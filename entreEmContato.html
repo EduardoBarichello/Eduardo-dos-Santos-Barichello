@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre em Contato</title>
+
+    <style>
+        /* Estilo geral para o corpo da página */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Barra de navegação */
+        nav {
+            background-color: #4682b4;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Links na barra de navegação */
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        /* Efeito de hover nos links da barra de navegação */
+        nav a:hover {
+            color: #add8e6;
+        }
+
+        /* Estilo do contêiner do formulário */
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            margin: 100px auto;
+        }
+
+        /* Estilo do título principal */
+        h1 {
+            color: #4682b4;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para o parágrafo */
+        p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Estilo para os inputs */
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        /* Estilo para os rótulos dos campos de entrada */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        /* Estilo para os campos de entrada de texto e email */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        /* Efeito de foco nos campos de entrada */
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #4682b4;
+            outline: none;
+        }
+
+        /* Estilo para o campo de texto (textarea) */
+        textarea {
+            resize: none;
+        }
+
+        /* Estilo para o botão de envio */
+        button {
+            background-color: #4682b4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Efeito de passar o mouse sobre o botão */
+        button:hover {
+            background-color: #4169e1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra de navegação com links para as seções -->
+    <nav>
+        <a href="index.html">Sobre Mim</a>
+        <a href="portofolio.html">Portfolio</a>
+        <a href="escolaridade.html">Escolaridade</a>
+        <a href="entreEmContato.html">Entre em Contato</a>
+    </nav>
+
+    <!-- Contêiner principal para o formulário de contato -->
+    <div class="container">
+        <h1>Entre em Contato</h1>
+        <p>Preencha o formulário abaixo para entrar em contato.</p>
+
+        <!-- Formulário de contato -->
+        <form>
+            <div class="input-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

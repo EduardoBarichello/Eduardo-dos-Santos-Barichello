@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim</title>
+    <style>
+        /* Reset de estilos padrão */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo da página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Estilo da barra de navegação */
+        nav {
+            background-color: #0066cc;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #004c99;
+        }
+
+        /* Estilo do conteúdo principal */
+        .container {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #0066cc;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        /* Estilo das imagens */
+        .images img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            transition: transform 0.3s;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .images img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilo dos links internos */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegação -->
+    <nav>
+        <ul>
+            <li><a href="index.html" onclick="showSection('sobre')">Sobre Mim</a></li>
+            <li><a href="portofolio.html" onclick="showSection('portfolio')">Portfólio</a></li>
+            <li><a href="escolaridade.html" onclick="showSection('escolaridade')">Escolaridade</a></li>
+            <li><a href="entreEmContato.html" onclick="showSection('contato')">Entre em Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+        <!-- Seção Sobre Mim -->
+        <div id="sobre" class="content-section active">
+            <h1>Sobre Mim</h1>
+            <p>Meu nome é Eduardo,meu apelido 'online' é Gioshi,sou fã de assuntos relacionados a computação,mecanica,engenharia elétrica,astronomia e música.</p>
+            <p>Amo a área de TI desde a infancia,sou bem extrovertido e proativo,nos meus tempos livres amo tirar fotos de astros com meu telescópio,compor músicas e viajar.</p>
+            
+            <!-- Imagens com efeito de hover -->
+            <div class="images">
+                <img src="eu.jpg" alt="Eu">
+                <img src="lua.jpeg" alt="Foto que tirei da Lua">
+            </div>
+        </div>
+
+        <!-- Seção Portfólio -->
+        <div id="portfolio" class="content-section">
+            <h1>Portfólio</h1>
+            <p>Aqui você pode ver alguns dos meus projetos mais recentes...</p>
+        </div>
+
+        <!-- Seção Escolaridade -->
+        <div id="escolaridade" class="content-section">
+            <h1>Escolaridade</h1>
+            <p>Informações sobre minha formação acadêmica e cursos realizados...</p>
+        </div>
+
+        <!-- Seção Entre em Contato -->
+        <div id="contato" class="content-section">
+            <h1>Entre em Contato</h1>
+            <p>Formulário ou informações para entrar em contato...</p>
+        </div>
+    </div>
+
+    <script>
+        // Função JavaScript
+        function showSection(sectionId) {
+            // Esconde todas as seções
+            var sections = document.querySelectorAll('.content-section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            // Exibe a seção clicada
+            var activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+    </script>
+</body>
+</html>
